@@ -67,7 +67,17 @@ app.post('/', async (req, res) => {
 
     return res
       .status(200)
-      .json({ status: 'ok' });
+      .send(`
+        <!doctype html>
+        <html lang="en">
+          <head>
+            <meta charset="UTF-8" />
+            <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+          </head>
+          <body>
+            <p>Your email was sent successfully!
+          </body>
+        </html>`);
   } catch (err) {
     console.log(err);
     return res
